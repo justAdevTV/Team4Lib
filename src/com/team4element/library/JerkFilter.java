@@ -2,40 +2,40 @@ package com.team4element.library;
 
 public class JerkFilter {
 
-	private double lastInput;
-	private double changeMax = 0.25;
-	private double changeMin = 0.25;
+	private double m_lastInput;
+	private double m_changeMax = 0.25;
+	private double m_changeMin = 0.25;
 
 	public JerkFilter() {
-		lastInput = 0;
+		m_lastInput = 0;
 	}
 
 	public double filter(double currentInput) {
 
-		currentInput = filterInputs(currentInput, lastInput);
-		lastInput = currentInput;
+		currentInput = filterInputs(currentInput, m_lastInput);
+		m_lastInput = currentInput;
 		return currentInput;
 
 	}
 
 	public void setMaxRateOfChange(double changeMax) {
-		this.changeMax = changeMax;
+		this.m_changeMax = changeMax;
 	}
 
 	public void setMinRateOfChange(double changeMin) {
-		this.changeMin = changeMin;
+		this.m_changeMin = changeMin;
 	}
 
 	public double getMaxRateOfChange() {
-		return changeMax;
+		return m_changeMax;
 	}
 
 	public double getMinRateOfChange() {
-		return changeMin;
+		return m_changeMin;
 	}
 	
 	public double getLastInput(){
-		return lastInput;
+		return m_lastInput;
 	}
 
 	private double filterInputs(double input, double lastSpeed) {
@@ -44,10 +44,10 @@ public class JerkFilter {
 
 		input = Math.abs(input);
 		lastSpeed = Math.abs(lastSpeed);
-		if (input > lastSpeed + changeMax) {
-			input = lastSpeed + changeMax;
-		} else if (input < lastSpeed - changeMin) {
-			input = lastSpeed - changeMin;
+		if (input > lastSpeed + m_changeMax) {
+			input = lastSpeed + m_changeMax;
+		} else if (input < lastSpeed - m_changeMin) {
+			input = lastSpeed - m_changeMin;
 		}
 
 		return input * sign;

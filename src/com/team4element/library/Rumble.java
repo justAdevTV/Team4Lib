@@ -6,42 +6,42 @@ import edu.wpi.first.wpilibj.Timer;
 
 public class Rumble {
 
-	private Joystick controller;
-	private float rumbleMagnitude = .75f;
-	private double timerDelay = .15;
+	private Joystick m_controller;
+	private float m_rumbleMagnitude = .75f;
+	private double m_timerDelay = .15;
 	
 	public Rumble(Joystick controller){
-		this.controller = controller;
+		this.m_controller = controller;
 	}
 	
 	public void setRumbleMagnitude(double rumbleMagnitude){
-		this.rumbleMagnitude = (float) rumbleMagnitude;
+		this.m_rumbleMagnitude = (float) rumbleMagnitude;
 	}
 	
 	public void setRumbleMagnitude(float rumbleMagnitude){
-		this.rumbleMagnitude = rumbleMagnitude;
+		this.m_rumbleMagnitude = rumbleMagnitude;
 	}
 	
 	public float getRumbleMagnitude(){
-		return rumbleMagnitude;
+		return m_rumbleMagnitude;
 	}
 	
 	public void setTimerDelay(double timerDelay){
-		this.timerDelay = timerDelay;
+		this.m_timerDelay = timerDelay;
 	}
 	
 	public double getTimerDelay(){
-		return timerDelay;
+		return m_timerDelay;
 	}
 	
 	public void runRumble(){
-		controller.setRumble(RumbleType.kLeftRumble, rumbleMagnitude);
-		controller.setRumble(RumbleType.kRightRumble, rumbleMagnitude);
+		m_controller.setRumble(RumbleType.kLeftRumble, m_rumbleMagnitude);
+		m_controller.setRumble(RumbleType.kRightRumble, m_rumbleMagnitude);
 
-		Timer.delay(timerDelay);
+		Timer.delay(m_timerDelay);
 
-		controller.setRumble(RumbleType.kLeftRumble, 0);
-		controller.setRumble(RumbleType.kRightRumble, 0);
+		m_controller.setRumble(RumbleType.kLeftRumble, 0);
+		m_controller.setRumble(RumbleType.kRightRumble, 0);
 	}
 	
 }
