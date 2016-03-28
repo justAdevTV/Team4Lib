@@ -1,4 +1,4 @@
-package com.team4element.library;
+package com.team4element.library.actuators;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 

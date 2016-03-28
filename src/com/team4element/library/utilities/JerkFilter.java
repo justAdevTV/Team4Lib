@@ -1,4 +1,4 @@
-package com.team4element.library;
+package com.team4element.library.utilities;
 
 public class JerkFilter {
 

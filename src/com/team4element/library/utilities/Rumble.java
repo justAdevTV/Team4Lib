@@ -1,4 +1,4 @@
-package com.team4element.library;
+package com.team4element.library.utilities;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Joystick.RumbleType;
